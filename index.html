@@ -12,28 +12,61 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet">
 
-  <!-- SWIPER -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="stylesheet" href="./scss/main.scss">
 
   <script defer src="./js/main.js"></script>
 </head>
 
-<body 
-  data-bs-spy="scroll" 
-  data-bs-target="#navbar-body" 
-  data-bs-root-margin="0" 
-  data-bs-offset="10" 
-  tabindex="0"
+<body data-bs-spy="scroll" data-bs-target="#navbar-body" data-bs-root-margin="0" data-bs-offset="10" tabindex="0"
   data-bs-smooth-scroll="true">
   <header class="bg-light">
     <div class="inner">
+      <!-- MOBILE MENU -->
+      <nav class="mobile-menu">
+        <span class="menu-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2px" fill="none" xmlns="http://www.w3.org/2000/svg" part="icon blz-icon">
+            <g>
+                <path d="M3,12h18"></path>
+                <path d="M3,6h18"></path>
+                <path d="M3,18h18"></path>
+              </g>
+          </svg>
+        </span>
+        <div class="m-dropdown-menu bg-light">
+          <div class="dropdown-header">
+            <span class="close-btn">
+              <svg width="28" height="28" xmlns="http://www.w3.org/2000/svg" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" role="presentation" fill="none" stroke-width="2px" viewBox="0 0 24 24" part="icon blz-icon">
+                <path d="M18 6L6 18M6 6L18 18"></path>
+              </svg>
+            </span>
+          </div>
+          <div class="dropdown-primary"></div>
+          <div class="dropdown-secondary"></div>
+        </div>
+        <a href="#" class="logo">
+          <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
+            part="icon blz-icon">
+            <path
+              d="M13.8994 13.901C15.2258 12.5745 16.8005 11.5223 18.5335 10.8044C20.2666 10.0865 22.124 9.71702 23.9999 9.71702C25.8757 9.71702 27.7332 10.0865 29.4663 10.8044C31.1993 11.5223 32.774 12.5745 34.1004 13.901L38.1426 9.85874C36.2854 8.00131 34.0806 6.5279 31.654 5.52265C29.2274 4.5174 26.6265 4 23.9999 4C21.3733 4 18.7724 4.5174 16.3458 5.52265C13.9192 6.5279 11.7143 8.00131 9.85718 9.85874L13.8994 13.901Z"
+              fill="#ED6516"></path>
+            <path
+              d="M39.3118 11.1345L35.2491 15.1972C37.03 17.4739 38.0784 20.2371 38.2561 23.122C38.4338 26.007 37.7323 28.878 36.2444 31.3559L28.8906 24.0007L24.8849 14.5878H24.8644V27.3108L32.8028 35.2491C30.2895 37.2148 27.1907 38.2828 24 38.2828C20.8093 38.2828 17.7105 37.2148 15.1973 35.2491L23.1356 27.3108V14.636L19.1094 24.0007L11.7542 31.3559C10.267 28.8776 9.56614 26.0067 9.74408 23.1218C9.92201 20.237 10.9704 17.474 12.7509 15.1972L8.68818 11.1345C6.23794 14.0502 4.67109 17.6048 4.17186 21.3805C3.67263 25.1561 4.26178 28.9958 5.87003 32.4481C7.47829 35.9004 10.0388 38.8217 13.2505 40.8686C16.4622 42.9155 20.1915 44.0029 24 44.0029C27.8085 44.0029 31.5379 42.9155 34.7495 40.8686C37.9612 38.8217 40.5217 35.9004 42.13 32.4481C43.7382 28.9958 44.3274 25.1561 43.8282 21.3805C43.3289 17.6048 41.7621 14.0502 39.3118 11.1345V11.1345Z"
+              fill="#333E48"></path>
+          </svg>
+        </a>
+        <a href="javascript:void(0)" class="user">
+          <svg width="28" height="28" viewBox="0 0 24 24" stroke="currentColor" fill="none"
+            xmlns="http://www.w3.org/2000/svg" part="icon blz-icon">
+            <path
+              d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </nav>
       <nav class="main-menu" id="navbar-body">
-
         <ul class="left-menu">
-          <li> 
+          <li>
             <a class="logo" href="#">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
                 part="icon blz-icon">
@@ -46,86 +79,108 @@
               </svg>
             </a>
           </li>
-            <li>
-              <a href="#scrollspyHeading1">게임 정보</a>
-            </li>
-            <li>
-              <a href="#scrollspyHeading2">2시즌</a>
-            </li>
-            <li>
-              <a href="#scrollspyHeading3">새소식</a>
-            </li>
-            <li>
-              <a href="#scrollspyHeading4">전장</a>
-            </li>
-            <li>
-              <a href="#scrollspyHeading5">영웅</a>
-            </li>
-            <li class="dropdown">
-              <a class="dropdown-list" href="javascript:void(0)">
-                커뮤니티
-                <div class="icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" role="presentation" fill="none" stroke-width="2px" viewBox="0 0 24 24" part="icon blz-icon">
-                    <path d="M6 9L12 15L18 9"></path>
-                  </svg>
-                </div>
-              </a>
-              <div class="dropdown-container">
-                <div class="dropdown-arrow"></div>
-                <div class="dropdown-wrapper">
-                  <div class="dropdown-primary">
-                    <a href="javascript:void(0)">토론장
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" focusable="false" role="presentation" viewBox="0 0 24 24" part="icon blz-icon">
-                        <path d="M13.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3.086l-6.293 6.293a1 1 0 1 0 1.414 1.414L18 7.414V10.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-6a.5.5 0 0 0-.5-.5h-6Z"></path>
-                        <path d="M8 7h4.08l-2 2H8a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2v-2.08l2-2V16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-5a4 4 0 0 1 4-4Z"></path>
-                      </svg>
-                    </a>
-                  </div>
-                  <div class="title dropdown-secondary">E스포츠</div>
-                  <div class="dropdown-secondary">
-                    <a href="javascript:void(0)">오버워치 리그
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" focusable="false" role="presentation" viewBox="0 0 24 24" part="icon blz-icon">
-                        <path d="M13.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3.086l-6.293 6.293a1 1 0 1 0 1.414 1.414L18 7.414V10.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-6a.5.5 0 0 0-.5-.5h-6Z"></path>
-                        <path d="M8 7h4.08l-2 2H8a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2v-2.08l2-2V16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-5a4 4 0 0 1 4-4Z"></path>
-                      </svg>
-                    </a></div>
-                  <div class="dropdown-secondary">
-                    <a href="javascript:void(0)">컨텐더스
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" focusable="false" role="presentation" viewBox="0 0 24 24" part="icon blz-icon">
-                        <path d="M13.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3.086l-6.293 6.293a1 1 0 1 0 1.414 1.414L18 7.414V10.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-6a.5.5 0 0 0-.5-.5h-6Z"></path>
-                        <path d="M8 7h4.08l-2 2H8a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2v-2.08l2-2V16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-5a4 4 0 0 1 4-4Z"></path>
-                      </svg>
-                    </a></div>
-                  <div class="dropdown-secondary">
-                    <a href="javascript:void(0)">오픈 디비전 코리아
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" focusable="false" role="presentation" viewBox="0 0 24 24" part="icon blz-icon">
-                        <path d="M13.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3.086l-6.293 6.293a1 1 0 1 0 1.414 1.414L18 7.414V10.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-6a.5.5 0 0 0-.5-.5h-6Z"></path>
-                        <path d="M8 7h4.08l-2 2H8a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2v-2.08l2-2V16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-5a4 4 0 0 1 4-4Z"></path>
-                      </svg>
-                    </a></div>
-              </div>
-              </div>
-            </li>
-          </ul>
-
-          <ul class="right-menu">
-            <li>
-              <a href="#">
-                <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none"
-                  xmlns="http://www.w3.org/2000/svg" part="icon blz-icon">
-                  <path
-                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          <li>
+            <a href="#scrollspyHeading1">게임 정보</a>
+          </li>
+          <li>
+            <a href="#scrollspyHeading2">2시즌</a>
+          </li>
+          <li>
+            <a href="#scrollspyHeading3">새소식</a>
+          </li>
+          <li>
+            <a href="#scrollspyHeading4">전장</a>
+          </li>
+          <li>
+            <a href="#scrollspyHeading5">영웅</a>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-list" href="javascript:void(0)">
+              커뮤니티
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" focusable="false" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" role="presentation" fill="none" stroke-width="2px" viewBox="0 0 24 24"
+                  part="icon blz-icon">
+                  <path d="M6 9L12 15L18 9"></path>
                 </svg>
-                계정
-              </a>
-            </li>
-            <li>
-              <button type="button" class="btn btn-primary">
-                지금 플레이
-              </button>
-            </li>
-          </ul>
+              </div>
+            </a>
+            <div class="dropdown-container">
+              <div class="dropdown-arrow"></div>
+              <div class="dropdown-wrapper">
+                <div class="dropdown-primary">
+                  <a href="javascript:void(0)">토론장
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" focusable="false" role="presentation"
+                      viewBox="0 0 24 24" part="icon blz-icon">
+                      <path
+                        d="M13.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3.086l-6.293 6.293a1 1 0 1 0 1.414 1.414L18 7.414V10.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-6a.5.5 0 0 0-.5-.5h-6Z">
+                      </path>
+                      <path
+                        d="M8 7h4.08l-2 2H8a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2v-2.08l2-2V16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-5a4 4 0 0 1 4-4Z">
+                      </path>
+                    </svg>
+                  </a>
+                </div>
+                <div class="title dropdown-secondary">E스포츠</div>
+                <div class="dropdown-secondary">
+                  <a href="javascript:void(0)">오버워치 리그
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" focusable="false" role="presentation"
+                      viewBox="0 0 24 24" part="icon blz-icon">
+                      <path
+                        d="M13.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3.086l-6.293 6.293a1 1 0 1 0 1.414 1.414L18 7.414V10.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-6a.5.5 0 0 0-.5-.5h-6Z">
+                      </path>
+                      <path
+                        d="M8 7h4.08l-2 2H8a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2v-2.08l2-2V16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-5a4 4 0 0 1 4-4Z">
+                      </path>
+                    </svg>
+                  </a></div>
+                <div class="dropdown-secondary">
+                  <a href="javascript:void(0)">컨텐더스
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" focusable="false" role="presentation"
+                      viewBox="0 0 24 24" part="icon blz-icon">
+                      <path
+                        d="M13.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3.086l-6.293 6.293a1 1 0 1 0 1.414 1.414L18 7.414V10.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-6a.5.5 0 0 0-.5-.5h-6Z">
+                      </path>
+                      <path
+                        d="M8 7h4.08l-2 2H8a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2v-2.08l2-2V16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-5a4 4 0 0 1 4-4Z">
+                      </path>
+                    </svg>
+                  </a></div>
+                <div class="dropdown-secondary">
+                  <a href="javascript:void(0)">오픈 디비전 코리아
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" focusable="false" role="presentation"
+                      viewBox="0 0 24 24" part="icon blz-icon">
+                      <path
+                        d="M13.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3.086l-6.293 6.293a1 1 0 1 0 1.414 1.414L18 7.414V10.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-6a.5.5 0 0 0-.5-.5h-6Z">
+                      </path>
+                      <path
+                        d="M8 7h4.08l-2 2H8a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2v-2.08l2-2V16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-5a4 4 0 0 1 4-4Z">
+                      </path>
+                    </svg>
+                  </a></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="right-menu">
+          <li>
+            <a href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none"
+                xmlns="http://www.w3.org/2000/svg" part="icon blz-icon">
+                <path
+                  d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              계정
+            </a>
+          </li>
+          <li>
+            <button type="button" class="btn btn-primary">
+              지금 플레이
+            </button>
+          </li>
+        </ul>
 
 
       </nav>
@@ -448,8 +503,8 @@
             </div>
           </div>
         </div>
-
       </div>
+
       <div class="swiper-prev">
 
         <svg xmlns="http://www.w3.org/2000/svg" focusable="false" stroke="currentColor" stroke-linecap="round"
