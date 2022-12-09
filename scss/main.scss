@@ -1,5 +1,5 @@
 @import "./bootstrap";
-@import "../node_modules/swiper/swiper.scss";
+@import "../node_modules/swiper/swiper-bundle.min.css";
 @import "./mixin";
 
 
@@ -22,6 +22,9 @@ body {
   font-weight: 700;
   text-shadow: 0 4px 10px rgb(0 0 0 / 20%);
   word-break: keep-all;
+  @include mobile {
+    font-size: 38px;
+  }
 }
 
 .description {
@@ -29,6 +32,10 @@ body {
   font-weight: 500;
   text-shadow: 0 4px 10px rgb(0 0 0 / 20%);
   word-break: keep-all;
+  @include mobile {
+    font-size: 16px;
+    line-height: 1.4;
+  }
 }
 
 a {
@@ -44,90 +51,297 @@ header {
   z-index: 9;
   font-size: 20px;
   font-weight: 700;
+
   @include tablet {
     height: 60px;
   }
+
   @include mobile {
     height: 60px;
   }
 
   .inner {
     .mobile-menu {
-      // position: relative;
+      width: 100%;
       margin-top: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @include desktop {
+        display: none;
+      }
+
       .menu-icon {
         display: flex;
         align-items: center;
         cursor: pointer;
+
         svg {
           color: rgba($color: #000, $alpha: .55);
         }
       }
-      .m-dropdown-menu {
-        z-index: 20;
-        position: absolute;
+
+      .m-dropdown-overay {
+        position: fixed;
         left: 0;
         top: 0;
-        width: 52vw;
-        height: 100vh;
-        background-color: #fff;
+        z-index: 49;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000, $alpha: .6);
+        display: none;
+        opacity: 0;
+        transition: opacity .5 ease-in;
+
+        &.show {
+          display: block;
+          opacity: 1;
+        }
       }
+
+      .m-dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 50;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 60%;
+        height: 100%;
+        overflow-y: auto;
+        background-color: #EBEFF4;
+        transition: left .3s ease-in;
+
+        &.show {
+          left: 0;
+        }
+
+        .dropdown-logo {
+          width: 72px;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          right: 0;
+          margin: auto;
+          &:hover {
+            opacity: .7;
+          }
+        }
+
+        .dropdown-header {
+          width: 100%;
+          padding: 10px;
+
+          .close-btn {
+            cursor: pointer;
+          }
+        }
+
+        .dropdown-primary {
+          padding-top: 30px;
+          padding-bottom: 50px;
+          width: 100%;
+
+
+          .mobile-logo {
+            width: 100%;
+
+            img {
+              display: block;
+              width: 80%;
+              margin: 0 auto;
+            }
+          }
+
+          .menu {
+            width: 100%;
+            margin-top: 30px;
+
+            ul {
+              padding: 0;
+
+              li {
+                a {
+                  color: rgba($color: #000, $alpha: .55);
+                  display: block;
+                  width: 95%;
+                  margin: 0 auto;
+                  border-radius: 4px;
+                  padding: 12px 15px;
+
+                  &:hover {
+                    background-color: rgba($color: #000, $alpha: .05);
+                  }
+
+                  &.community-list {
+                    display: flex;
+                    align-items: center;
+                    gap: 2px;
+
+                    &.clicked {
+                      background-color: rgba($color: #000, $alpha: .05);
+                      border-radius: 4px 4px 0 0;
+                    }
+
+                    .icon {
+                      svg {
+                        width: 18px;
+                        height: 18px;
+                      }
+                    }
+                  }
+                }
+
+                .community-container {
+                  width: 95%;
+                  margin: 0 auto;
+                  border-radius: 0 0 4px 4px;
+                  background-color: rgba($color: #000, $alpha: .05);
+                  display: none;
+
+                  &.opened {
+                    display: block;
+                  }
+
+                  a {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+
+                    &:hover {
+                      background-color: rgba($color: #000, $alpha: .1);
+                    }
+
+                    svg {
+                      width: 24px;
+                      height: 24px;
+                    }
+                  }
+
+                  .title {
+                    color: rgba($color: #000, $alpha: .55);
+                    font-size: 16px;
+                    padding: 12px 28px;
+                  }
+                }
+              }
+            }
+
+            .btn {
+              color: #fff;
+              font-weight: 500;
+              display: block;
+              width: 90%;
+              margin: 0 auto;
+              padding: 12px 15px;
+            }
+          }
+        }
+
+        .dropdown-secondary {
+          padding-top: 20px;
+          width: 100%;
+          background-color: rgba($color: #000, $alpha: .05);
+
+          .subtitle {
+            color: rgba($color: #000, $alpha: .55);
+            font-size: 16px;
+            padding: 12px 28px;
+          }
+
+          .submenu {
+            padding: 0;
+
+            li {
+              a {
+                color: rgba($color: #000, $alpha: .55);
+                display: block;
+                width: 95%;
+                margin: 0 auto;
+                border-radius: 4px;
+                padding: 12px 15px;
+
+                &:hover {
+                  background-color: rgba($color: #000, $alpha: .05);
+                }
+              }
+            }
+          }
+        }
+      }
+
       .logo {
         display: flex;
         align-items: center;
       }
+
       .user {
         display: flex;
         align-items: center;
         color: rgba($color: #000, $alpha: .55);
       }
+
       @include desktop {
         display: none;
       }
     }
+
     .main-menu {
       display: flex;
       justify-content: space-between;
+
       @include tablet {
         display: none;
       }
+
       @include mobile {
         display: none;
       }
+
       .left-menu,
       .right-menu {
         display: flex;
         align-items: center;
         margin-bottom: 0;
+        padding: 0;
+
         a {
           color: rgba($color: #000, $alpha: .55);
           padding: 12px 15px;
           display: block;
+
           &:hover {
             color: rgba($color: #000, $alpha: .7);
           }
         }
+
+        .logo {
+          padding: 12px 15px 12px 0;
+        }
+
         .btn {
           color: #fff;
           font-weight: 500;
           display: block;
         }
+
         .dropdown {
           position: relative;
+
           &:hover {
             .dropdown-container {
               visibility: visible;
               opacity: 1;
             }
           }
-          
+
           .dropdown-list {
             display: flex;
             align-items: center;
             gap: 2px;
+
             .icon {
               svg {
                 width: 18px;
@@ -135,6 +349,7 @@ header {
               }
             }
           }
+
           .dropdown-container {
             position: absolute;
             left: -60%;
@@ -143,8 +358,8 @@ header {
             visibility: hidden;
             opacity: 0;
             transition: opacity .3s ease-out;
-            
-      
+
+
             .dropdown-arrow {
               background-color: #fff;
               border-radius: 4px;
@@ -156,6 +371,7 @@ header {
               z-index: 20;
               transform: rotate(45deg);
             }
+
             .dropdown-wrapper {
               position: absolute;
               top: 22px;
@@ -167,13 +383,16 @@ header {
               a {
                 display: flex;
                 align-items: center;
+
                 svg {
                   width: 24px;
                   height: 24px;
                 }
               }
+
               .dropdown-secondary {
                 background-color: rgba($color: #000, $alpha: .05);
+
                 &.title {
                   color: rgba($color: #000, $alpha: .55);
                   font-size: 16px;
@@ -194,11 +413,15 @@ header {
   margin-top: 70px;
   width: 100%;
   height: 900px;
+
   @include tablet {
     margin-top: 58px;
+    max-height: 700px;
   }
+
   @include mobile {
     margin-top: 58px;
+    max-height: 650px;
   }
 
   .background-overay {
@@ -208,6 +431,13 @@ header {
     background-color: #242a42;
     opacity: 0.3;
     z-index: 1;
+    @include tablet {
+      max-height: 700px;
+    }
+  
+    @include mobile {
+      max-height: 650px;
+    }
   }
 
   .background-video {
@@ -217,6 +447,13 @@ header {
     pointer-events: none;
     object-fit: cover;
     display: block;
+    @include tablet {
+      max-height: 700px;
+    }
+  
+    @include mobile {
+      max-height: 650px;
+    }
   }
 
   .inner {
@@ -226,6 +463,9 @@ header {
     left: 0;
     right: 0;
     margin: auto;
+    @include mobile {
+      top: 20%;
+    }
 
     .top {
       display: flex;
@@ -238,7 +478,10 @@ header {
         margin-bottom: 30px;
 
         img {
-          width: 600px;
+          max-width: 600px;
+          @include mobile {
+            max-width: 340px;
+          }
         }
       }
 
@@ -261,6 +504,14 @@ header {
     .bottom {
       margin-top: 200px;
 
+      @include tablet {
+        display: none;
+      }
+
+      @include mobile {
+        display: none;
+      }
+
       .items {
         display: flex;
         align-items: center;
@@ -274,6 +525,42 @@ header {
           svg {
             width: 100%;
             height: 32px;
+            color: #fff;
+            opacity: .7;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    // MOBILE BOTTOM
+    .m-bottom {
+      width: 50%;
+      margin: 0 auto;
+      margin-top: 40px;
+      @include desktop {
+        display: none;
+      }
+      @include mobile {
+        width: 100%;
+      }
+      .items {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        margin: 0;
+        padding: 0;
+
+        .item {
+          width: 25%;
+          text-align: center;
+
+          svg {
             color: #fff;
             opacity: .7;
 
@@ -301,6 +588,14 @@ header {
     align-items: center;
     position: relative;
     height: 600px;
+    @include tablet {
+      display: block;
+      height: 700px;
+    }
+    @include mobile {
+      display: block;
+      height: 600px;
+    }
 
     .left {
       display: flex;
@@ -309,6 +604,22 @@ header {
       color: #1d253a;
       width: 50%;
       height: 100%;
+      @include tablet {
+        width: 100%;
+        text-align: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+        display: block;
+        height: auto;
+      }
+      @include mobile {
+        width: 100%;
+        text-align: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+        display: block;
+        height: auto;
+      }
 
       .heading {
         margin-bottom: 30px;
@@ -318,12 +629,33 @@ header {
     .right {
       width: 50%;
       height: 100%;
+      @include tablet {
+        width: 100%;
+        height: auto;
+        text-align: center;
+      }
+      @include mobile {
+        width: 100%;
+        height: auto;
+        text-align: center;
+      }
+      
 
       img {
         position: absolute;
         display: block;
-        width: 600px;
+        width: 50%;
         right: 0;
+        @include tablet {
+          left: 0;
+          margin: auto;
+          width: 60%;
+        }
+        @include mobile {
+          left: 0;
+          margin: auto;
+          width: 70%;
+        }
       }
     }
   }
@@ -337,6 +669,12 @@ header {
   background-position: 50% 50%;
   position: relative;
   z-index: 2;
+  @include tablet {
+    background-image: url("../images/season-mobile-bg.jpg");
+  }
+  @include mobile {
+    background-image: url("../images/season-mobile-bg.jpg");
+  }
 
   .inner {
     height: 600px;
@@ -344,6 +682,12 @@ header {
     justify-content: flex-end;
     align-items: center;
     color: #fff;
+    @include tablet {
+      display: block;
+    }
+    @include mobile {
+      display: block;
+    }
 
     .text-box {
       width: 48%;
@@ -352,9 +696,24 @@ header {
       align-items: flex-end;
       right: 0;
       text-align: right;
+      @include tablet {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-top: 40px;
+      }
+      @include mobile {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-top: 40px;
+      }
 
       .heading {
         margin-bottom: 30px;
+        br {
+          display: none;
+        }
       }
     }
 
@@ -362,9 +721,16 @@ header {
       margin-top: 20px;
       display: flex;
       gap: 20px;
+      @include tablet {
+        justify-content: center;
+      }
+      @include mobile {
+        justify-content: center;
+      }
 
       .btn {
         font-weight: 500;
+        font-size: 16px;
 
         &.btn-primary {
           color: #fff;
@@ -404,7 +770,6 @@ header {
         display: flex;
         flex-direction: column;
         cursor: pointer;
-        box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 9%);
         border-radius: 14px;
         overflow: hidden;
         box-sizing: border-box;
@@ -479,6 +844,9 @@ header {
     position: relative;
     height: 850px;
     text-align: center;
+    @include mobile {
+      height: 700px;
+    }
 
     .heading {
       padding: 50px 0 30px;
@@ -487,33 +855,39 @@ header {
 
     .description {
       color: #fff;
+      margin-bottom: 20px;
     }
+
     .swiper-container {
-      margin-top: 40px;
+      max-width: 600px;
+      margin: 0 auto;
       overflow: hidden;
+
       .swiper-wrapper {
-        width: 100%;
+
 
         .swiper-slide {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          
+
 
           .item {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            width: 600px;
+            // max-width: 600px;
 
             img {
               width: 100%;
               border-radius: 10px;
             }
+
             .text-box {
               color: #fff;
               margin-top: 20px;
+
               .title {
                 margin-bottom: 10px;
                 font-weight: 700;
@@ -524,9 +898,31 @@ header {
         }
       }
     }
+
     .swiper-pagination {
-  
+      bottom: 40px;
+      left: 0;
+      right: 0;
+      z-index: 0;
+
+      .swiper-pagination-bullet {
+        background-color: rgba($color: #fff, $alpha: 0.9);
+        width: 13px;
+        height: 12px;
+        margin-right: 6px;
+        outline: none;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      .swiper-pagination-bullet-active {
+        background-color: #fff;
+      }
+      @include desktop {
+        display: none;
+      }
     }
+
     .swiper-next,
     .swiper-prev {
       z-index: 10;
@@ -540,21 +936,32 @@ header {
       top: 50%;
       border: 2px solid rgba($color: #fff, $alpha: 0.2);
       border-radius: 50%;
+      @include tablet {
+        display: none;
+      }
+      @include mobile {
+        display: none;
+      }
+
       &:hover {
         border: 2px solid rgba($color: #fff, $alpha: 0.9);
+
         svg {
           color: rgba($color: #fff, $alpha: 0.9);
         }
       }
+
       svg {
         width: 24px;
         height: 24px;
-        color: rgba(255,255,255,.7);
+        color: rgba(255, 255, 255, .7);
       }
     }
+
     .swiper-next {
       right: 10%;
     }
+
     .swiper-prev {
       left: 10%;
     }
@@ -766,4 +1173,3 @@ footer {
     }
   }
 }
-

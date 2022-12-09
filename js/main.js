@@ -1,20 +1,32 @@
-import Dropdown from "bootstrap/js/dist/dropdown"
-import Collapse from "bootstrap/js/dist/collapse"
 import ScrollSpy from "bootstrap/js/dist/scrollspy"
-
 import Swiper from "swiper/swiper-bundle.min.js"
-
-
-const dropdownElementList = document.querySelectorAll('.dropdown-toggle')
-const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new Dropdown(dropdownToggleEl))
-
-const collapseElementList = document.querySelectorAll('.collapse')
-const collapseList = [...collapseElementList].map(collapseEl => new Collapse(collapseEl))
 
 new ScrollSpy(document.body, {
   target: '#navbar-body'
 })
 
+// MOBILE MENU EVENT
+const mobileIconEl = document.querySelector('.mobile-menu .menu-icon')
+const mobileDdnOryEl = document.querySelector('.m-dropdown-overay')
+const mobileDdnMenuEl = document.querySelector('.m-dropdown-menu')
+const closeBtnEl = document.querySelector('.dropdown-header .close-btn')
+const communityListEl = document.querySelector('.community-list')
+const communityCtnEl = document.querySelector('.community-container')
+
+mobileIconEl.addEventListener('click', () => {
+  mobileDdnOryEl.classList.add('show')
+  mobileDdnMenuEl.classList.add('show')
+})
+
+closeBtnEl.addEventListener('click', () => {
+  mobileDdnOryEl.classList.remove('show')
+  mobileDdnMenuEl.classList.remove('show')
+})
+
+communityListEl.addEventListener('click', () => {
+  communityListEl.classList.toggle('clicked')
+  communityCtnEl.classList.toggle('opened')
+})
 // BATTLEFIELD SWIPER
 new Swiper('.battlefield .swiper-container', {
   slidesPerView: 1,
@@ -23,8 +35,13 @@ new Swiper('.battlefield .swiper-container', {
   navigation: {
     prevEl: '.battlefield .swiper-prev',
     nextEl: '.battlefield .swiper-next'
+  },
+  pagination: {
+    el: ".battlefield .swiper-pagination",
+    clickable: true
   }
 });
+
 
 
 // footer 올해 연도 계산
