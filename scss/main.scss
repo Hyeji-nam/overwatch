@@ -38,6 +38,15 @@ body {
   }
 }
 
+.btn {
+  @include tablet {
+    font-size: 16px;
+  }
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
 a {
   text-decoration: none;
 }
@@ -546,6 +555,7 @@ header {
       }
       @include mobile {
         width: 100%;
+        margin-top: 100px;
       }
       .items {
         width: 100%;
@@ -671,9 +681,11 @@ header {
   z-index: 2;
   @include tablet {
     background-image: url("../images/season-mobile-bg.jpg");
+    background-position: 50% 60%;
   }
   @include mobile {
     background-image: url("../images/season-mobile-bg.jpg");
+    background-position: 50% 70%;
   }
 
   .inner {
@@ -730,7 +742,6 @@ header {
 
       .btn {
         font-weight: 500;
-        font-size: 16px;
 
         &.btn-primary {
           color: #fff;
@@ -845,7 +856,7 @@ header {
     height: 850px;
     text-align: center;
     @include mobile {
-      height: 700px;
+      height: 800px;
     }
 
     .heading {
@@ -900,7 +911,7 @@ header {
     }
 
     .swiper-pagination {
-      bottom: 40px;
+      bottom: 35px;
       left: 0;
       right: 0;
       z-index: 0;
