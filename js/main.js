@@ -1,5 +1,6 @@
 import ScrollSpy from "bootstrap/js/dist/scrollspy"
 import Swiper from "swiper/swiper-bundle.min.js"
+import TypeIt from "typeit"
 
 new ScrollSpy(document.body, {
   target: '#navbar-body'
@@ -27,6 +28,16 @@ communityListEl.addEventListener('click', () => {
   communityListEl.classList.toggle('clicked')
   communityCtnEl.classList.toggle('opened')
 })
+
+// TYPEIT ANIMATION
+new TypeIt('.main .heading', {
+  strings: '쟁취할 가치가 있는 미래',
+  speed: 70, 
+  afterComplete: function (instance) {
+    instance.destroy();
+  }
+}).go();
+
 // BATTLEFIELD SWIPER
 new Swiper('.battlefield .swiper-container', {
   slidesPerView: 1,

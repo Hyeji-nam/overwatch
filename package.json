@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.5",
+    "typeit": "^8.7.0"
   }
 }
